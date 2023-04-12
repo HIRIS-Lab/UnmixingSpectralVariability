@@ -28,6 +28,13 @@ SNR = 30;
 P = size(M_avg,2);
 [nr,nc,L] = size(Yim);
 
+nRow = nr;
+nCol = nc;
+nBand = L;
+save('data\Y.mat', "Y", "nRow", "nCol", "nBand");
+save('data\A.mat', "A", "nRow", "nCol");
+save('data\M.mat', "M_avg", "Mth");
+
 % extract reference endmember and library from the image
 M0 = vca(Y,'Endmembers',P);
 M0 = sort_endmembers_to_ref(M_avg,M0);
